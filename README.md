@@ -26,7 +26,7 @@ The project includes a Streamlit web application that allows users to interact w
 
     GRU-MODEL.h5: The saved GRU model file.
 
-tokenizer.pickle: The saved tokenizer object to ensure consistent word-to-index mapping.
+    tokenizer.pickle: The saved tokenizer object to ensure consistent word-to-index mapping.
 
 How to Run Locally
 Prerequisites
