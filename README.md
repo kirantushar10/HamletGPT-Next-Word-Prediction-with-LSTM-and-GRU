@@ -28,79 +28,74 @@ The project includes a Streamlit web application that allows users to interact w
 
     tokenizer.pickle: The saved tokenizer object to ensure consistent word-to-index mapping.
 
-How to Run Locally
-Prerequisites
-Python 3.7+
+# How to Run Locally
+    1. Prerequisites
+        Python 3.7+
+        pip
 
-pip
+    2. Installation
+        Clone the repository:
+            git clone https://github.com/kirantushar10/HamletGPT-Next-Word-Prediction-with-LSTM-and-GRU.git
+            cd HamletGPT-Next-Word-Prediction-with-LSTM-and-GRU
+            
+        Install the required libraries:
+            pip install -r requirements.txt
+    
+    Note: You'll need to create a requirements.txt file with the following dependencies:
 
-Installation
-Clone the repository:
+            tensorflow
+            nltk
+            streamlit
+            numpy
+            pandas
+            scikit-learn
+    
+    3. Run the main script to train the models and save the files:
+    
+        python next_word_prediction.py
+    
+    Note: This will create the .h5 model files and the tokenizer.pickle file.
 
-Bash
+    4. Launch the Streamlit application:
 
-git clone https://github.com/kirantushar10/HamletGPT-Next-Word-Prediction-with-LSTM-and-GRU.git
-cd HamletGPT-Next-Word-Prediction-with-LSTM-and-GRU
-Install the required libraries:
+        streamlit run streamlit_app.py
 
-Bash
+    Note: Your default web browser should open to the application. If not, open http://localhost:8501.
 
-pip install -r requirements.txt
-Note: You'll need to create a requirements.txt file with the following dependencies:
-
-tensorflow
-nltk
-streamlit
-numpy
-pandas
-scikit-learn
-Run the main script to train the models and save the files:
-
-Bash
-
-python next_word_prediction.py
-This will create the .h5 model files and the tokenizer.pickle file.
-
-Launch the Streamlit application:
-
-Bash
-
-streamlit run streamlit_app.py
-Your default web browser should open to the application. If not, open http://localhost:8501.
-
-Live Demo
+# Live Demo
 You can test the application live at: https://shorturl.at/nQz2Z
 
-Model Architectures
-LSTM Model
-The LSTM model is designed with two layers to capture complex dependencies in the text.
+# Model Architectures
 
-Embedding Layer: Converts word indices into dense vectors.
+# LSTM Model
+    The LSTM model is designed with two layers to capture complex dependencies in the text.
 
-LSTM Layers: Two LSTM layers with 150 and 100 units, respectively, to learn long-range dependencies.
+    Embedding Layer: Converts word indices into dense vectors.
 
-Dropout Layer: A dropout rate of 0.2 is applied to prevent overfitting.
+    LSTM Layers: Two LSTM layers with 150 and 100 units, respectively, to learn long-range dependencies.
 
-Dense Output Layer: A final dense layer with a softmax activation function outputs probabilities for each word in the vocabulary.
+    Dropout Layer: A dropout rate of 0.2 is applied to prevent overfitting.
 
-GRU Model
-The GRU model offers a slightly simpler, and often more computationally efficient, alternative to the LSTM.
+    Dense Output Layer: A final dense layer with a softmax activation function outputs probabilities for each word in the vocabulary.
 
-Embedding Layer: Similar to the LSTM model.
+# GRU Model
+    The GRU model offers a slightly simpler, and often more computationally efficient, alternative to the LSTM.
 
-GRU Layers: Two GRU layers with 150 and 100 units.
+    Embedding Layer: Similar to the LSTM model.
 
-Dropout Layer: A dropout rate of 0.2 is applied for regularization.
+    GRU Layers: Two GRU layers with 150 and 100 units.
 
-Dense Output Layer: A final dense layer with a softmax activation function.
+    Dropout Layer: A dropout rate of 0.2 is applied for regularization.
 
-How it Works
-Data Loading: The gutenberg corpus from NLTK is used to load the text of Hamlet.
+    Dense Output Layer: A final dense layer with a softmax activation function.
 
-Tokenization: The text is converted into a sequence of numbers, where each number represents a unique word.
+# How it Works
+    1. Data Loading: The gutenberg corpus from NLTK is used to load the text of Hamlet.
 
-Sequence Generation: The text is split into n-gram sequences. For each line, every possible sequence of words is created and padded to a uniform length. For example, from "To be or not to be," sequences like "To be," "To be or," and "To be or not" are created.
+    2. Tokenization: The text is converted into a sequence of numbers, where each number represents a unique word.
 
-Model Training: The model is trained on these sequences, learning to predict the last word of a sequence given the preceding words.
+    3. Sequence Generation: The text is split into n-gram sequences. For each line, every possible sequence of words is created and padded to a uniform length. For example,           from "To be or not to be," sequences like "To be," "To be or," and "To be or not" are created.
 
-Prediction: When a new phrase is provided, it is tokenized, padded to the correct length, and fed into the model. The model outputs a probability distribution over the entire vocabulary, and the word with the highest probability is selected as the prediction.
+    4. Model Training: The model is trained on these sequences, learning to predict the last word of a sequence given the preceding words.
+
+    5. Prediction: When a new phrase is provided, it is tokenized, padded to the correct length, and fed into the model. The model outputs a probability distribution over the         entire vocabulary, and the word with the highest probability is selected as the prediction.
