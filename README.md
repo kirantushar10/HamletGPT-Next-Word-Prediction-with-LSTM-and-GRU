@@ -5,15 +5,15 @@ This project demonstrates the power of Recurrent Neural Networks (RNNs), specifi
 The project includes a Streamlit web application that allows users to interact with both the trained LSTM and GRU models in real-time and compare their next-word predictions.
 
 Features
-LSTM and GRU Models: Two distinct models are trained to showcase and compare the performance of these advanced RNN architectures for sequence prediction.
+    LSTM and GRU Models: Two distinct models are trained to showcase and compare the performance of these advanced RNN architectures for sequence prediction.
 
-Data Preprocessing: The text of Hamlet is tokenized, sequenced, and padded to prepare it for model training.
+    Data Preprocessing: The text of Hamlet is tokenized, sequenced, and padded to prepare it for model training.
 
-Model Training: Both models are trained with a categorical cross-entropy loss function and the Adam optimizer.
+    Model Training: Both models are trained with a categorical cross-entropy loss function and the Adam optimizer.
 
-Streamlit Application: A user-friendly web interface provides a simple way to input text and get predictions from both models.
+    Streamlit Application: A user-friendly web interface provides a simple way to input text and get predictions from both models.
 
-Model Persistence: The trained models and the tokenizer are saved, allowing for quick deployment and prediction without retraining.
+    Model Persistence: The trained models and the tokenizer are saved, allowing for quick deployment and prediction without retraining.
 
 Project Structure
 next_word_prediction.py: The core script for data preprocessing, model building, training, and saving the LSTM and GRU models.
