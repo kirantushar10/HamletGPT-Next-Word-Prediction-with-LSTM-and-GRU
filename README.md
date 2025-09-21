@@ -4,7 +4,7 @@ This project demonstrates the power of Recurrent Neural Networks (RNNs), specifi
 
 The project includes a Streamlit web application that allows users to interact with both the trained LSTM and GRU models in real-time and compare their next-word predictions.
 
-Features
+# Features
     LSTM and GRU Models: Two distinct models are trained to showcase and compare the performance of these advanced RNN architectures for sequence prediction.
 
     Data Preprocessing: The text of Hamlet is tokenized, sequenced, and padded to prepare it for model training.
@@ -15,16 +15,16 @@ Features
 
     Model Persistence: The trained models and the tokenizer are saved, allowing for quick deployment and prediction without retraining.
 
-Project Structure
-next_word_prediction.py: The core script for data preprocessing, model building, training, and saving the LSTM and GRU models.
+# Project Structure
+    next_word_prediction.py: The core script for data preprocessing, model building, training, and saving the LSTM and GRU models.
 
-streamlit_app.py: The Python script for the Streamlit web application.
+    streamlit_app.py: The Python script for the Streamlit web application.
 
-hamlet.txt: The raw text data file used for training.
+    hamlet.txt: The raw text data file used for training.
 
-next_word_lstm.h5: The saved LSTM model file.
+    next_word_lstm.h5: The saved LSTM model file.
 
-GRU-MODEL.h5: The saved GRU model file.
+    GRU-MODEL.h5: The saved GRU model file.
 
 tokenizer.pickle: The saved tokenizer object to ensure consistent word-to-index mapping.
 
